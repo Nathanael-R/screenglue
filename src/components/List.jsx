@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Movie from "./Movie";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
-const List = ({ Header,rowID, apiURL }) => {
+const List = ({ Header, rowID, apiURL }) => {
   const [popular, setPopular] = useState([]);
   useEffect(() => {
     getPopular();
@@ -28,13 +28,17 @@ const List = ({ Header,rowID, apiURL }) => {
     var slider = document.getElementById("slider" + rowID);
     slider.scrollLeft = slider.scrollLeft + 500;
   };
+
+  
   return (
-    <section className="px-16 py-12 text-white">
+    <section className="md:px-16 sm:px-8 py-12 text-white px-4">
       <div className="flex items-center mb-6 w-fit">
         <div className="w-2 h-10 bg-yellow-400 mr-3"></div>
         <h2 className="text-3xl font-bold">{Header}</h2>
       </div>
-      <h4 className="text-xl font-bold underline cursor-pointer w-fit">View all</h4>
+      <h4 className="text-xl font-bold underline cursor-pointer w-fit mb-6">
+        View all
+      </h4>
       <div className="relative flex items-center group">
         {
           <MdChevronLeft
